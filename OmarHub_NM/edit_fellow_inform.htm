@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"> </script>
+</head>
+<body>
+<label>Information</label><br/>
+     <label>Basic Inform</label><br />
+     <label>First Name:</label><input id="first_name" type="text" /><br/>
+     <label>Last Name:</label><input id="last_name" type="text" /><br/>
+     <label>New Password:</label><input id="new_password" type="text" /><br/>
+     <label>Confirm:</label><input id="confirm" type="text" /><br/>
+     <label>Gender:</label>
+     <input id="Radio1" type="radio" name="gender" />Male &nbsp 
+     <input id="Radio2" type="radio" name="gender" />Femal &nbsp 
+     <input id="Radio3" type="radio" name="gender" />Secret<br/>
+     <label>Language:</label><select id="language">
+         <option>Chinese</option>
+         <option>English</option>
+     </select><br/>
+     <label>Contact Inform</label><br/>
+     <label>Mobile Number Country Code:</label><input id="mobile_number_country_code" type="text" /><br/>
+     <label>Mobile Number:</label><input id="mobile_number" type="text" /><br/>
+     <label>Street:</label><input id="street" type="text" /><br/>
+     <label>City:</label><input id="city" type="text" /><br/>
+     <label>State:</label><input id="state" type="text" /><br/>
+     <label>Country:</label><input id="country" type="text" /><br/>
+     <label>Postal Code:</label><input id="postal_code" type="text" /><br/>
+     <label>Organization Inform</label><br/>
+     <label>Organization Name:</label><input id="organizatioin_name" type="text" /> &nbsp Acronym:<input id="organization_acronym" type="text" /><br/>
+     <label>Role In Organization:</label><input id="role_in_organization" type="text" /><br/>
+     <label>Date Organization Formed:</label><input id="date_orgaization_formed" type="text" value="日历控件" /><br/>
+     <label>Organization Web Url:</label><input id="organization_web_url" type="text" /><br/>
+     <label>Number Of Employees:</label><select id="number_of_employees">
+         <option>Less Than 10</option>
+         <option>11-25</option>
+         <option>26-40</option>
+         <option>41-60</option>
+         <option>61-80</option>
+         <option>81-100</option>
+         <option>101-150</option>
+         <option>151-200</option>
+         <option>More Than 200</option>
+     </select><br/>
+     <label>Organization Type:</label><select id="organization_type">
+         <option>Private Sector</option>
+         <option>Goverment Agency </option>
+         <option>Multilateral Organization</option>
+     </select><br/>
+     <label>Organization Annual Budget:</label><select id="organization_annual_budget">
+         <option>Less Than $50,000</option>
+         <option>$50,000-$100,000</option>
+         <option>$100,000-$200,000</option>
+         <option>$200,000-$500,000</option>
+         <option>$500,000-$1,000,000</option>
+         <option>$1,000,000-$5,000,000</option>
+         <option>$5,000,000-$10,000,000</option>
+         <option>More Than $10,000,000</option>
+     </select><br/>
+     <label>Organization Phone Number:</label><input id="organization_phone_number" type="text" /> &nbsp Country Code:<input id="organization_phone_number_country_code" type="text" /><br/>
+    <input id="save" type="button" value="保存" /> &nbsp 
+    <input id="Button2" type="button" value="取消" />
+     <script language="javascript" type="text/javascript">
+         $("#save").click(
+            function () {
+               
+                var fellow = {
+                    "user_id": 3,  //在cookie中找
+                    "first_name": $("#first_name").val(),
+                    "last_name" : $("#last_name").val(),
+                    "new_password" : $("#new_password").val(),
+                    "confirm" : $("#confirm").val(),
+                    "mobile_number_country_code" : $("#mobile_number_country_code").val(),
+                    "mobile_number" : $("#mobile_number").val(),
+                    "street" : $("#street").val(),
+                    "city" : $("#city").val(),
+                    "state" : $("#state").val(),
+                    "country" : $("#country").val(),
+                    "postal_code" : $("#postal_code").val(),
+                    "organizatioin_name" : $("#organizatioin_name").val(),
+                    "organization_acronym" : $("#organization_acronym").val(),
+                    "role_in_organization" : $("#role_in_organization").val(),
+                    "organization_web_url" : $("#organization_web_url").val(),
+                    "organization_phone_number" : $("#organization_phone_number").val(),
+                    "organization_phone_number_country_code" : $("organization_phone_number_country_code").val(),
+                };
+
+                $.post("Control/fellow_inform.ashx", fellow,
+                    function (data, status) {
+                        if (status == "success") {
+                            alert("save successfully! " + data);
+                        }
+                    }
+                    );
+            });
+               
+     </script>
+</body>
+</html>

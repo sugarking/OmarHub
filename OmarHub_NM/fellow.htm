@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>fellow</title>
+<meta name="keywords" content=","/>
+<meta name="description" content="此页面的说明"/>
+<meta content="IE=8" http-equiv="X-UA-Compatible"/>
+
+    <style type="text/css">
+        .style1
+        {
+            font-size: large;
+        }
+        .style2
+        {
+            font-size: x-large;
+        }
+        .style3
+        {
+            font-size: xx-large;
+            color: #0000FF;
+        }
+        .style4
+        {
+            color: #FFFF00;
+        }
+    </style>
+    <script type="text/javascript" src="Scripts/jquery-1.4.1.js"> </script>
+    <script type ="text/javascript" >
+        $(function () {
+            $("#btnSubmit").click(function () {
+                var Firstname = $("#txtFirstName").val();
+                var Lastname = $("#txtLastName").val();
+                var Email = $("#txtEmail").val();
+                var Roles = $('input:radio[name="Roles"]:checked').val();
+                if (checkemail(Email)&&checkfirstname()&&checklastname()) {
+                    $.post("Control/Addinformation.ashx", { "txtFirstName": Firstname, "txtLastName": Lastname, "txtEmail": Email, "Roles": Roles }, function (data, status) {
+                        if (status == "success")
+                           
+
+                             alert(data)
+                        
+                        
+                    });
+
+               }
+               
+
+            });
+        });
+         //验证是否填写了用户名
+
+
+        function checkfirstname(){
+       
+            if(txtFirstName.value==""){
+             $("#spanfirst").html("<font color='red'>不能为空。</font>");
+                return false;
+            }
+             else {
+                $("#spanfirst").html("");
+                return true;
+                }
+             
+        };
+        function checklastname() {
+            if(txtLastName.value==""){
+             $("#spanlast").html("<font color='red'>不能为空。</font>");
+                return false;
+            }
+             else {
+                $("#spanlast").html("");
+                return true;
+                }
+             
+        };
+        function checkemail(str) {
+            var sReg = /[_a-zA-Z\d\-\.]+@[_a-zA-Z\d\-]+(\.[_a-zA-Z\d\-]+)+$/;
+            if (!sReg.test(str)) {
+                $("#spanEmail").html("<font color='red'>Email地址错误！请重新输入。</font>");
+                return false;
+            }
+            else {
+                $("#spanEmail").html("");
+                return true;
+            }
+        }
+
+    
+    </script>
+</head>
+<body background="image/1Sxq_HKSL_002015.jpg" style="background-color: #6600FF">
+<div >
+	<!-- topWrap_cover start -->
+	<div >
+		<a href="首页.htm" title="home">space for Logo</a></div>
+	<!-- topWrap_cover end --></div>
+<div>
+        <h1 align="center" class="style4">用户信息填写<br /><br /><br /><br /></h1>
+       
+       
+        <div>
+        
+            <table align="center" >
+            <tr class="style2"align="center">
+                    <td align ="center"  class="style1">firstname:</td><td align ="center" > <input id="txtFirstName" type="text"  /><span id="spanfirst"></span> </td></tr>
+           <tr class="style2"align="center">
+                    <td align ="center" class="style1">lastname:</td><td align="center" > <input id="txtLastName" type="text" /><span id="spanlast"></span></td> </tr>
+           <tr class="style2"align="center">
+              <td align ="center"   class="style1">E-mail Address:</td><td align ="center" ><input id="txtEmail"onblur="checkemail(this.value)" type="text"/><span id="spanEmail"></span></td></tr>
+           <tr class="style2"align="center">
+               <td align ="center" class ="style1">Roles</td> 
+                 <td align ="center" class ="style1" ><input  id="RbtnOmarFellow" checked="checked" name="Roles" type="radio" value=" Omar Fellow"/> 
+                       Omar Fellow
+               <input id="RbtnAdmin" checked="checked" name="Roles" type="radio" value="Admin" /><span 
+                       class="style1">Admin</span></td></tr>
+              </table>
+             
+             <p align="right" > <input type="button"value="提交"id="btnSubmit" 
+                     
+                     
+                     style="width: 63px; margin-left: 808px; margin-right: 722px; margin-top: 0px; background-color: #FF99FF;"/></p>
+        </div>
+</div>
+</body>
+</html>

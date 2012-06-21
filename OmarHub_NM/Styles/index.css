@@ -1,0 +1,136 @@
+.topWrap_cover {
+	height: 212px;
+	background: url(../images/cover_banner_top.jpg) no-repeat center top;
+}
+.logoWrap_cover {
+	width: 960px;
+	padding: 10px 7px 0 27px;
+	margin: 0 auto;
+}
+.coverLogo {
+	float: left;
+	display: block;
+	width: 370px;
+	height: 80px;
+	background: url(../images/logo.png) no-repeat;
+}
+
+.coverMain {
+	width: 960px;
+	margin: 0 auto;
+	height: 104px;
+}
+.loginForm .validate,.coverInviteForm .validate {
+	height: 20px;
+	width: 280px;
+	line-height: 20px;
+}
+
+.loginForm-security .validate {
+	width: 170px;
+}
+
+.loginForm,.apply-form {
+	width: 690px;
+	_width: 693px;
+	margin: 0 auto;
+}
+
+.loginForm li {
+	float: left;
+	padding-right: 10px;
+}
+
+.loginForm li .inputW {
+	padding: 5px 0;
+}
+
+.loginForm .infos {
+	color: #555;
+}
+
+.loginForm-mail .remember {
+	width: 13px;
+	height: 13px;
+	margin-right: 5px;
+	padding: 0;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.loginForm-mail label {
+	vertical-align: middle;
+	_vertical-align: -1px;
+}
+
+.loginForm-security {
+	display: none;
+	width: 187px;
+	overflow: hidden;
+}
+
+.loginForm-security .inputType {
+	margin-right: 5px;
+	width: 55px;
+}
+
+.loginForm-log {
+	padding-right: 0!important;
+}
+
+.bottomWrap-inner {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	height: 294px
+}
+
+.inputType {
+	line-height: 23px;
+	overflow: hidden;
+	height: 23px;
+	font-size: 14px;
+	width: 273px;
+	border: 1px solid #ddd;
+	color: #bbb;
+	padding: 5px 0 5px 5px;
+}
+
+.coverLog {
+	display: block;
+	line-height: 35px;
+	height: 35px;
+	background: url(../images/buttons.png) right -520px;
+	font-size: 14px;
+	width: 100px;
+	text-align: center;
+	color: #fff;
+}
+.coverSign {
+	line-height: 500px;
+	width: 195px;
+	height: 41px;
+	overflow: hidden;
+	background: url(../images/coverSign.png) no-repeat;
+	_height:37px;
+	float: right;
+	display: inline;
+	margin: 10px 0 0 0;
+	outline: invert none medium;
+}
+.coverSign:hover {
+	background-image: url(../images/coverSign_hover.png);
+}
+.coverLog:hover {
+	text-decoration: none;
+	color: #fff;
+	background-position: left -520px;
+}
+
+.coverLog:focus {
+	outline: 2px solid #e5c45f;
+}
+.bottomWrap {
+	height: 320px;
+	background: url(../images/cover_banner.jpg) no-repeat center top;
+}

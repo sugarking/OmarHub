@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>nm</title>
+    <meta name="keywords" content="," />
+    <meta name="description" content="此页面的说明" />
+    <meta content="IE=8" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="styles/common.css"/>
+    <link rel="stylesheet" href="styles/index.css"/>
+    <script src="Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="topWrap_cover">
+	<!-- topWrap_cover start -->
+	<div class="logoWrap_cover o-h">
+		<a href="#" class="coverLogo" title="home">space for Logo</a>
+	</div>
+	<!-- topWrap_cover end -->
+</div>
+<div style="padding-top: 50px;" class="coverMain o-h1">
+	<!-- main start -->
+	<div class="loginWrap">
+		<form method="post" action="" class="loginForm" id="loginForm" onkeydown="if(event.keyCode==13) document.all.form1.submit();" style="height:71px" />
+			<ul class="o-h">
+				<li class="loginForm-mail">
+				<p class="inputW">
+					<input name="username" type="text" id="username" class="inputType" style="display:none;color: rgb(0, 0, 0);" / >
+					<input onfocus="$('#username_show').hide();$('#username').show();$('#username').focus();" name="username_show" type="text" id="username_show" class="inputType" tabindex="1" value="E-mail address" style="color: rgb(187, 187, 187);">
+				</p>
+				<p class="infos">
+					<a href="javascript:void(0)" id="FirstLogin" class="tdu">Fisrt login in</a>
+				</p>
+				</li>
+				<li class="loginForm-password">
+				<p class="inputW">
+					<input name="password" type="text" id="Password" class="inputType" style="display:none;color: rgb(0, 0, 0);">
+					<input onfocus="$('#Password_show').hide();$('#Password').show();$('#Password').focus();" name="password_show" type="text" id="Password_show" class="inputType" value="Password" style="color: rgb(187, 187, 187);" tabindex="2">
+				</p>
+				<p class="infos">
+					<a href="#" target="_self" class="tdu">Forget password?</a>
+				</p>
+				</li>
+				<li class="loginForm-security" id="loginForm-security">
+				</li>
+				<li class="loginForm-log">
+				<p class="inputW">
+					<a href="#" class="big-blue-btn"  id="submit_butt" tabindex="5"><b>Logn in</b></a>
+				</p>
+				</li>
+			</ul>
+			<!--<div id="ie_warning_msg" style="display: none;text-align: center;line-height: 19px; font-size: 10pt; color: #111;">
+				<p>
+					You are attempting to use an old version of Internet Explorer to enter AshokaHub. This site does not support Internet Explorer version 7.0 or less. Please enter the site using a different browser like Firefox, Chrome, or Internet Explorer version 8.0 or higher. If you do not have one of these browsers on your computer, you may download one here: <b><a href="http://www.mozilla.com/" target="_blank">Firefox</a>, <a href="http://www.google.com/chrome" target="_blank">Chrome</a>, <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home" target="_blank">Internet Explorer version 9.0</a></b>.
+				</p>
+			</div>
+			<script type="text/javascript">
+			  // Following script removes the login box if browser is ie 7 or older
+			  if (BrowserDetect.browser == "Explorer" && BrowserDetect.version <= 7){
+				$('#loginForm').remove();
+				$('#ie_warning_msg').show();    
+			  }  
+			</script>
+			-->
+		</form>
+		<form method="post" action="" class="apply-form" id="ApplyForm" onkeydown="if(event.keyCode==13) document.all.form2.submit();" name="form2" style="display:none;">
+			<div style="margin:0 auto;width:500px;">
+				<p class="fs14 tgrey2 ptb">
+					Please input your Email address, so we can create an accout for you!
+				</p>
+				<input name="apply_email" type="text" id="ApplyEmail" class="inputType" style="display:none;color: rgb(0, 0, 0);">
+				<input onfocus="$('#ApplyEmailShow').hide();$('#ApplyEmail').show();$('#ApplyEmail').focus();" name="apply_email" type="text" id="ApplyEmailShow" class="inputType" value="Email address" style="color: rgb(187, 187, 187);">
+				<a href="#" class="big-blue-btn"  id="ApplySubmit" tabindex="5"><b>Please give me an account</b></a>
+			</div>
+		</form>
+		<p class="ta-c fs14 tgrey2" style="padding-top:40px;">
+				Some words at middle!
+		</p>
+	</div>
+	<!-- main end -->
+</div>
+<div class="bottomWrap">
+	<div class="bottomWrap-inner"></div>
+	<div class="bottomWrap-foot tgrey3">some words at bottom</div>
+</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("#FirstLogin").click(function(){
+		$(this).closest("form").hide();
+		$("#ApplyForm").show();
+	});
+});
+
+$("#submit_butt").click(function () {
+    var inform = { "email": $("#username").val(), "password": $("#Password").val() };
+    $.post("Control/login.ashx", inform,
+        function (data, status) {
+            if (status == "success") {
+                if (data == -1) {
+                    alert("the email or password is wrong!");
+                }
+                else {
+                    document.cookie = "user_id=" + data;
+                    window.location.href = "main.html";
+                }
+            }
+        });
+});
+</script>
+</html>

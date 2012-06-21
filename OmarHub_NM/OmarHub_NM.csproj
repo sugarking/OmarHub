@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F265C52-AE36-4418-A291-081999213E9A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OmarHub_NM</RootNamespace>
+    <AssemblyName>OmarHub_NM</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddTag.aspx" />
+    <Content Include="App_Data\Omar.mdf" />
+    <Content Include="App_Data\OmarHum_nm.mdf" />
+    <Content Include="App_Data\OmarHum_nm_log.LDF">
+      <DependentUpon>OmarHum_nm.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Omar_log.ldf">
+      <DependentUpon>Omar.mdf</DependentUpon>
+    </Content>
+    <Content Include="bin\OmarHub_NM.dll" />
+    <Content Include="bin\OmarHub_NM.pdb" />
+    <Content Include="create_offer.htm" />
+    <Content Include="edit_fellow_inform.htm" />
+    <Content Include="fellow.htm" />
+    <Content Include="images\1Sxq_HKSL_002015.jpg" />
+    <Content Include="images\buttons.png" />
+    <Content Include="images\coverSign.png" />
+    <Content Include="images\coverSign_hover.png" />
+    <Content Include="images\cover_banner.jpg" />
+    <Content Include="images\cover_banner_top.jpg" />
+    <Content Include="images\header_bb.png" />
+    <Content Include="images\input-bg-top.png" />
+    <Content Include="images\logo-l.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\ui-btn.png" />
+    <Content Include="image\1Sxq_HKSL_002015.jpg" />
+    <Content Include="index.html" />
+    <Content Include="main.html" />
+    <Content Include="obj\Debug\TempPE\DAL.forUserEdit.Designer.cs.dll" />
+    <Content Include="offersDisplay.htm" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Styles\common.css" />
+    <Content Include="Styles\index.css" />
+    <Content Include="Styles\main.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="用户信息.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddTag.aspx.cs">
+      <DependentUpon>AddTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTag.aspx.designer.cs">
+      <DependentUpon>AddTag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Addinformation.ashx.cs">
+      <DependentUpon>Addinformation.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddTag.ashx.cs">
+      <DependentUpon>AddTag.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\create_offer.ashx.cs">
+      <DependentUpon>create_offer.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\fello_inform.ashx.cs">
+      <DependentUpon>fello_inform.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\forGetOffers.ashx.cs">
+      <DependentUpon>forGetOffers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Control\login.ashx.cs">
+      <DependentUpon>login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\forActivityEdit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forActivityEdit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\forAddTag.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forAddTag.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\forGetOffers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forGetOffers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\forUerAdd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forUerAdd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\forUserEdit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forUserEdit.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Offer.cs" />
+    <Compile Include="Entity\TagInfo.cs" />
+    <Compile Include="Entity\UserInfo.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Control\fello_inform.ashx" />
+    <Content Include="Control\login.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Control\AddTag.ashx" />
+    <Content Include="Control\Addinformation.ashx" />
+    <Content Include="Control\create_offer.ashx" />
+    <Content Include="Control\forGetOffers.ashx" />
+    <None Include="DAL\forActivityEdit.xsc">
+      <DependentUpon>forActivityEdit.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forActivityEdit.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>forActivityEdit.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\forActivityEdit.xss">
+      <DependentUpon>forActivityEdit.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forAddTag.xsc">
+      <DependentUpon>forAddTag.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forAddTag.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>forAddTag.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\forAddTag.xss">
+      <DependentUpon>forAddTag.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forGetOffers.xsc">
+      <DependentUpon>forGetOffers.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forGetOffers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>forGetOffers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\forGetOffers.xss">
+      <DependentUpon>forGetOffers.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forUerAdd.xsc">
+      <DependentUpon>forUerAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forUerAdd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>forUerAdd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DAL\forUerAdd.xss">
+      <DependentUpon>forUerAdd.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forUserEdit.xsc">
+      <DependentUpon>forUserEdit.xsd</DependentUpon>
+    </None>
+    <None Include="DAL\forUserEdit.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>forUserEdit.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAL\forUserEdit.xss">
+      <DependentUpon>forUserEdit.xsd</DependentUpon>
+    </None>
+    <None Include="images\cover_banner_top.psd" />
+    <None Include="images\logo.psd" />
+    <None Include="images\ui-btn.psd" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50619</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
